@@ -1,0 +1,16 @@
+{
+  "name": "lucaseverett.dev",
+  "scripts": {
+    "start": "parcel ./src/index.html --open --no-cache",
+    "build": "rimraf dist && parcel build ./src/index.html --no-cache"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.0",
+    "sass": "^1.24.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "normalize.css": "^8.0.1"
+  }
+}
