@@ -1,1 +1,1 @@
-<div style="text-align:center"><img src ="screenshot.png" /></div>
+<div style="text-align:center"><img src ="preview.png" /></div>
