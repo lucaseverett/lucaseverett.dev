@@ -78,7 +78,9 @@ section#hello {
     background-size: 200%;
     background-position: -8.2em -0.5em;
     background-image: url("/Lucas.png"), linear-gradient(#dbeafe, #60a5fa);
-    box-shadow: 0 0 0 0.5em #fff, 0 0 0 1em #d4d4d4;
+    box-shadow:
+      0 0 0 0.5em #fff,
+      0 0 0 1em #d4d4d4;
   }
 }
 
@@ -278,7 +280,7 @@ section#skills {
       }
     }
 
-    @nest .fixed & {
+    .fixed & {
       grid-template-columns: 200px 1fr 200px;
       background-color: #1e3a8a;
       color: #fff;
@@ -326,7 +328,7 @@ section#skills {
     padding: 0 0 var(--nav-initial-height);
     flex-direction: row;
 
-    @nest .fixed & {
+    .fixed & {
       padding-top: var(--nav-initial-height);
     }
 
