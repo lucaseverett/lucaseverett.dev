@@ -1,5 +1,5 @@
-@import "modern-normalize/modern-normalize.css";
-@import "inter-ui/inter.css";
+@import url("modern-normalize.css?v=1734654462");
+@import url("inter/inter.css?v=1734654462");
 
 html {
   --nav-initial-height: 120px;
@@ -16,7 +16,7 @@ body {
 
 @supports (font-variation-settings: normal) {
   body {
-    font-family: "Inter var", "system-ui";
+    font-family: InterVariable, sans-serif;
   }
 }
 
@@ -46,11 +46,11 @@ section#hello {
   margin: 0 auto;
   background: linear-gradient(#fafafa, #e5e5e5);
 
-  & .about {
+  .about {
     max-width: 500px;
   }
 
-  & h1 {
+  h1 {
     margin: 0;
     max-width: 500px;
     font-size: 1.6em;
@@ -77,7 +77,7 @@ section#hello {
     }
   }
 
-  & .headshot {
+  .headshot {
     margin: 1em;
     width: 16em;
     height: 16em;
@@ -85,10 +85,9 @@ section#hello {
     background-size: contain;
     background-size: 200%;
     background-position: -8.2em -0.5em;
-    background-image: url("/Lucas.png"), linear-gradient(#dbeafe, #60a5fa);
-    box-shadow:
-      0 0 0 0.5em #fff,
-      0 0 0 1em #d4d4d4;
+    background-image: url("/Lucas.png?v=1734654462"),
+      linear-gradient(#dbeafe, #60a5fa);
+    box-shadow: 0 0 0 0.5em #fff, 0 0 0 1em #d4d4d4;
   }
 }
 
@@ -104,15 +103,15 @@ section#recent {
   background-color: #262626;
   padding-bottom: 50px;
 
-  & h2 {
+  h2 {
     color: #fff;
 
-    & span {
+    span {
       color: #3b82f6;
     }
   }
 
-  & ul {
+  ul {
     list-style: none;
     display: grid;
     grid-template-columns: min-content;
@@ -123,12 +122,12 @@ section#recent {
     justify-content: center;
     margin: 0 auto;
 
-    & li {
+    li {
       margin: 0;
       border-radius: 6px;
       background-color: #404040;
 
-      & a {
+      a {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -140,7 +139,7 @@ section#recent {
         &:hover {
           outline: 2px solid #fff;
 
-          & .project-title {
+          .project-title {
             text-decoration: underline;
           }
         }
@@ -149,18 +148,18 @@ section#recent {
           outline: 2px solid #fff;
         }
 
-        & .project-title {
+        .project-title {
           font-weight: 500;
           color: #fff;
         }
 
-        & .project-description {
+        .project-description {
           color: #d4d4d4;
           font-size: 0.9em;
         }
       }
 
-      & img {
+      img {
         margin-bottom: 10px;
         max-width: 180px;
       }
@@ -173,29 +172,29 @@ section#about {
   padding: 0 50px 50px;
   font-size: 1.1em;
 
-  & span {
+  span {
     color: #2563eb;
   }
 
-  & .side-by-side {
-    & .current,
-    & .strengths {
+  .side-by-side {
+    .current,
+    .strengths {
       font-weight: bold;
       padding-bottom: 20px;
     }
 
-    & .left {
+    .left {
       padding-bottom: 20px;
     }
   }
 
-  & ul {
+  ul {
     margin: 0;
     padding: 0;
     list-style-position: inside;
   }
 
-  & li:not(:first-of-type) {
+  li:not(:first-of-type) {
     margin: 10px 0 0;
   }
 }
@@ -204,7 +203,7 @@ section#skills {
   background-color: #fff;
   padding: 0 50px 50px;
 
-  & ul {
+  ul {
     list-style: none;
     display: grid;
     grid-template-columns: min-content min-content;
@@ -215,7 +214,7 @@ section#skills {
     justify-content: center;
     margin: 0 auto;
 
-    & li {
+    li {
       width: 130px;
       height: 130px;
       margin: 0;
@@ -228,7 +227,7 @@ section#skills {
       font-weight: 500;
       row-gap: 10px;
 
-      & img {
+      img {
         width: 50px;
       }
     }
@@ -237,13 +236,13 @@ section#skills {
 
 @media (min-width: 600px) {
   section#recent {
-    & ul {
+    ul {
       grid-template-columns: min-content min-content;
     }
   }
 
   section#skills {
-    & ul li {
+    ul li {
       width: 200px;
       height: 200px;
       row-gap: 20px;
@@ -259,7 +258,7 @@ section#skills {
     padding: 0 20px;
     font-weight: 500;
 
-    & a {
+    a {
       text-decoration: none;
 
       &:hover {
@@ -267,12 +266,12 @@ section#skills {
       }
     }
 
-    & .name,
-    & .social {
+    .name,
+    .social {
       display: none;
     }
 
-    & ul {
+    ul {
       display: flex;
       justify-content: center;
       column-gap: 20px;
@@ -281,8 +280,8 @@ section#skills {
       padding: 0;
     }
 
-    & li {
-      & a {
+    li {
+      a {
         color: #000;
         font-size: 18px;
       }
@@ -298,18 +297,18 @@ section#skills {
       height: var(--nav-fixed-height);
       z-index: 1;
 
-      & .name {
+      .name {
         font-size: 24px;
         display: initial;
         justify-self: start;
         white-space: nowrap;
       }
 
-      & ul {
+      ul {
         justify-self: center;
       }
 
-      & li {
+      li {
         white-space: nowrap;
       }
 
@@ -335,7 +334,7 @@ section#skills {
         }
       }
 
-      & a {
+      a {
         color: #fff;
       }
     }
@@ -349,55 +348,55 @@ section#skills {
       padding-top: var(--nav-initial-height);
     }
 
-    & h1 {
+    h1 {
       font-size: 2em;
 
-      & span {
+      span {
         white-space: nowrap;
       }
     }
 
-    & .headshot {
+    .headshot {
       font-size: 1.29em;
     }
 
-    & .social {
-      & img {
+    .social {
+      img {
         width: 55px;
       }
     }
   }
 
   section#recent {
-    & ul {
+    ul {
       grid-template-columns: min-content min-content min-content;
 
-      & li img {
+      li img {
         max-width: 240px;
       }
     }
   }
 
   section#about {
-    & .side-by-side {
+    .side-by-side {
       display: grid;
       grid-template-columns: 1fr min-content;
       column-gap: 30px;
       max-width: 1100px;
       margin: 0 auto;
 
-      & .left {
+      .left {
         padding-bottom: 0;
       }
 
-      & .right {
+      .right {
         white-space: nowrap;
       }
     }
   }
 
   section#skills {
-    & ul {
+    ul {
       grid-template-columns: min-content min-content min-content;
     }
   }
