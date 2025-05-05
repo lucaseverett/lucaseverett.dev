@@ -102,7 +102,7 @@ h2 {
 
 section#recent {
   background-color: #262626;
-  padding-bottom: 50px;
+  padding: 0 50px 50px;
 
   h2 {
     color: #fff;
@@ -114,14 +114,12 @@ section#recent {
 
   ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: min-content;
-    column-gap: 20px;
-    row-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     margin: 0;
     padding: 0;
     justify-content: center;
-    margin: 0 auto;
 
     li {
       margin: 0;
@@ -236,12 +234,6 @@ section#skills {
 }
 
 @media (min-width: 600px) {
-  section#recent {
-    ul {
-      grid-template-columns: min-content min-content;
-    }
-  }
-
   section#skills {
     ul li {
       width: 200px;
@@ -369,12 +361,8 @@ section#skills {
   }
 
   section#recent {
-    ul {
-      grid-template-columns: min-content min-content min-content;
-
-      li img {
-        max-width: 240px;
-      }
+    ul li img {
+      max-width: 240px;
     }
   }
 
