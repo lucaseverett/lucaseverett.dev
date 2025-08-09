@@ -1,0 +1,101 @@
+---
+const { kind, title, description } = Astro.props;
+const tags = Astro.props.tags ?? [];
+const links = Astro.props.links ?? [];
+const variant = Astro.props.variant ?? "default";
+const thumbnailSrc = Astro.props.thumbnailSrc ?? null;
+const thumbnailAlt = Astro.props.thumbnailAlt ?? "";
+
+// Shared class strings
+const cardBaseClasses = "rounded-xl border border-zinc-200 bg-white shadow-sm";
+const kindBadgeClasses =
+  "mb-1 flex items-center gap-2 text-sm text-blue-700 font-medium";
+const titleClasses = "text-xl md:text-2xl font-semibold text-zinc-900";
+const descriptionClasses = "mt-2 text-zinc-700";
+const tagsContainerClasses = "mt-4 flex flex-wrap gap-2 text-xs text-zinc-600";
+const tagClasses = "rounded-full bg-zinc-100 px-2.5 py-1";
+const linksContainerClasses = "mt-5 flex flex-wrap gap-3";
+const linkClasses =
+  "inline-flex items-center gap-1 text-sm font-medium text-blue-700 hover:text-blue-800";
+const linkIconClasses = "size-4 opacity-80";
+---
+
+{
+  variant === "featured" ? (
+    <div class={`${cardBaseClasses} overflow-hidden`}>
+      <div class="grid md:grid-cols-3">
+        <div class="md:col-span-2 p-6">
+          <div class={kindBadgeClasses}>
+            <span class="inline-flex size-2 rounded-full bg-blue-600" />
+            {kind}
+          </div>
+          <h3 class={titleClasses}>{title}</h3>
+          <p class={descriptionClasses}>{description}</p>
+          {tags.length > 0 && (
+            <div class={tagsContainerClasses}>
+              {tags.map((tag) => (
+                <span class={tagClasses}>{tag}</span>
+              ))}
+            </div>
+          )}
+          {links.length > 0 && (
+            <div class={linksContainerClasses}>
+              {links.map((link) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class={linkClasses}
+                >
+                  <img src={link.icon} alt="" class={linkIconClasses} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+        <div class="p-6 border-t md:border-l md:border-t-0 border-zinc-200 bg-zinc-50 flex items-center justify-center">
+          {thumbnailSrc && (
+            <img
+              src={thumbnailSrc}
+              alt={thumbnailAlt}
+              class="w-full max-w-md rounded-lg border border-zinc-200 shadow-sm"
+              loading="lazy"
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  ) : (
+    <article class={`${cardBaseClasses} p-6`}>
+      <div class={kindBadgeClasses}>
+        <span class="inline-flex size-2 rounded-full bg-blue-600" />
+        {kind}
+      </div>
+      <h3 class={titleClasses}>{title}</h3>
+      <p class={descriptionClasses}>{description}</p>
+      {tags.length > 0 && (
+        <div class={tagsContainerClasses}>
+          {tags.map((tag) => (
+            <span class={tagClasses}>{tag}</span>
+          ))}
+        </div>
+      )}
+      {links.length > 0 && (
+        <div class={linksContainerClasses}>
+          {links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              class={linkClasses}
+            >
+              <img src={link.icon} alt="" class={linkIconClasses} />
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </article>
+  )
+}
